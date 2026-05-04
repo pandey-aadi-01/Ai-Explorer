@@ -6,6 +6,7 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
+  padding-top: 60px;
 }
 
 .logo {
@@ -82,75 +83,54 @@ a {
   z-index: 1000;
 }
 
-/* Important  if you remove this the "50 AI agents. One surface" this will not work*/
-body {
-  padding-top: 60px;
-}
-
-
-/* Glass Panel */
-/* .glass {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-  padding: 30px;
-  border-radius: 20px;
-  width: 180px;
-  position: relative;
-} */
-
 .button-section {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* margin-top: 12px; */
 }
 
 .glass {
-  /* background: rgba(255, 255, 255, 0.05); */
-  /* backdrop-filter: blur(15px);  im[otants for glass type */
-  /* padding: 30px; */
-  /* border-radius: 20px; */
   width: 280px;
   position: relative;
 }
 
-
+/* Get Started Button - Darker & More Attractive */
 .main-btn {
-  width: 55%;
-  height: 40px;
-  border: none;
+  width: 140px;
+  height: 42px;
+  border: 1px solid rgba(0, 200, 255, 0.4);
   border-radius: 50px;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 14px;
   cursor: pointer;
   color: white;
-  background: linear-gradient(90deg, #00e0ff, #0044ff);
-  transition: all 0.4s ease;
-  box-shadow: 0 0 15px rgba(0, 200, 255, 0.6);
+  background: linear-gradient(90deg, #0088cc, #0033aa);
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 0 25px rgba(0, 136, 204, 0.6), inset 0 0 15px rgba(0, 200, 255, 0.2);
   position: relative;
   z-index: 5;
+  letter-spacing: 0.5px;
 }
-
 
 .main-btn:hover {
-  transform: translateY(-5px) scale(1.05);
-  background: linear-gradient(90deg, #00f0ff, #1d02ec);
-  box-shadow: 0 0 25px rgba(0, 200, 255, 0.9);
+  transform: translateY(-3px) scale(1.03);
+  background: linear-gradient(90deg, #00aaff, #0044dd);
+  box-shadow: 0 0 35px rgba(0, 170, 255, 0.8), 0 5px 20px rgba(0, 68, 221, 0.5), inset 0 0 20px rgba(0, 200, 255, 0.3);
+  border-color: rgba(0, 200, 255, 0.6);
 }
 
-
 .main-btn:active {
-  transform: scale(1.95);
-  box-shadow: 0 0 10px rgba(0, 200, 255, 0.5);
+  transform: translateY(-1px) scale(0.98);
+  box-shadow: 0 0 20px rgba(0, 136, 204, 0.7), inset 0 0 10px rgba(0, 200, 255, 0.2);
 }
 
 .main-btn.hide {
-  transform: translateX(-110%);
+  transform: translateX(-150%);
   opacity: 0;
+  pointer-events: none;
 }
 
-
+/* Option Buttons - Same as Navbar Links */
 .options {
   position: absolute;
   top: 50%;
@@ -160,6 +140,8 @@ body {
   gap: 10px;
   opacity: 0;
   transition: .5s;
+
+
 }
 
 .options.active {
@@ -168,26 +150,28 @@ body {
 }
 
 .option-btn {
-  flex: 1;
-  padding: 8px;
-  border: none;
-  width: 100px;
-  border-radius: 50px;
-  color: white;
-  font-weight: 600;
+  text-decoration: none;
+  background: linear-gradient(to right, rgba(15, 23, 42, 0.7), rgba(30, 41, 59, 0.5));
+  backdrop-filter: blur(15px);
+  color: rgb(7, 196, 243);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.5em 1em;
+  border-radius: 1em;
+  font-weight: 500;
+  box-shadow: inset 0 0 8px 1px hsl(229, 77%, 20%);
+  cursor: pointer;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.signup {
-  background: linear-gradient(to right, #00e0ff, #0044ff);
-  box-shadow: 0 0 15px #00c8ff;
-  color: white;
+.option-btn:hover {
+  transform: scale(1.09) translateY(-3px);
+  box-shadow: inset 0 0 8px 1px hsl(229, 77%, 20%), 0 0 15px rgb(112, 240, 240);
 }
 
-.login {
-  background: linear-gradient(to right, #00e0ff, #0044ff);
-  box-shadow: 0 0 15px #00c8ff;
-  color: white;
+.option-btn:active {
+  transform: scale(1.05) translateY(-1px);
 }
+
 
 
 #back-btn {
@@ -199,25 +183,27 @@ body {
   transition: .3s;
   text-align: center;
   display: block;
-
 }
 
 #back-btn.show {
   opacity: 1;
   color: rgb(2, 17, 22);
-  background: linear-gradient(to right,
-      #09f3ff,
-      #0084ff);
+  background: linear-gradient(to right, #09f3ff, #0084ff);
+  padding: 6px 20px;
+  border-radius: 50px;
+  font-weight: 600;
+}
+
+#back-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(9, 243, 255, 0.5);
 }
 
 .a-tag:hover {
-  transform: scale(1.09);
+  transform: scale(1.09) translateY(-3px);
   transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-  transform: translateY(-3px);
-  box-shadow: rgb(112, 240, 240);
-
+  box-shadow: 0 0 15px rgb(112, 240, 240);
 }
-
 
 .image-container {
   display: flex;
@@ -228,16 +214,13 @@ body {
   position: absolute;
   margin-left: 50%;
   transition: transform 0.7s ease-in-out;
-
 }
 
 .image-container:hover {
-  transform: scale(1.09);
+  transform: scale(0.9) translateY(-20px);
   transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-  transform: translateY(-20px);
-  box-shadow: rgb(112, 240, 240);
+  box-shadow: 0 0 20px rgb(112, 240, 240);
 }
-
 
 .side-image {
   width: 700px;
@@ -245,7 +228,6 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   background: linear-gradient(270deg, #1d05d6, #00c8ff);
-
 }
 
 .container {
@@ -255,7 +237,6 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-
 }
 
 .A-plus {
@@ -267,22 +248,12 @@ body {
   margin-top: 20px;
   width: 50%;
   height: 3.8vh;
-
-  gap: 12px;
-  font-weight: 800;
-  background: rgba(255, 255, 255, 0.1);
-  /* border: 2px solid rgba(0, 123, 255, 0.5); */
-  color: #000;
   gap: 0.7em;
-
+  font-weight: 800;
   padding: 0.5em;
   border-radius: 1em;
-
-  /* border: 1px solid hsla(183, 84%, 71%, 0.495); */
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(15px);
-
-  /* box-shadow: inset 0 0 8px 1px hsla(175, 74%, 47%, 0.468); */
 }
 
 .sine-a {
@@ -315,16 +286,12 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: gradientMove 36s ease infinite;
-  /* background: rgba(255, 255, 255, 0.05); */
-  /* backdrop-filter: blur(15px); */
-
 }
 
 .Aidea {
   display: flex;
   align-items: center;
   box-shadow: 0 0.1px 0px rgb(112, 240, 240);
-
 }
 
 .early-acc {
@@ -340,18 +307,13 @@ body {
 .cricle {
   width: 28px;
   height: 28px;
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   border-radius: 50%;
   font-size: 14px;
   font-weight: 800;
-
-  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-
   border: 1px solid rgba(0, 200, 255, 0.6);
   font-family: 'Poppins', sans-serif;
   text-transform: uppercase;
@@ -378,7 +340,6 @@ body {
   overflow: hidden;
   transition: transform 0.7s ease-in-out;
   margin-left: 12px;
-
 }
 
 /* Rotating Border Layer */
@@ -404,19 +365,16 @@ body {
 }
 
 .heading:hover {
-  transform: scale(1.09);
+  transform: scale(1.09) translateY(-20px);
   transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-  transform: translateY(-20px);
-  box-shadow: rgb(112, 240, 240);
+  box-shadow: 0 0 20px rgb(112, 240, 240);
 }
-
 
 @keyframes spin {
   100% {
     transform: rotate(360deg);
   }
 }
-
 
 .head {
   font-size: 40px;
